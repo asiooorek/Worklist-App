@@ -30,6 +30,9 @@ sap.ui.define([
 
 			// create the views based on the url/hash
 			this.getRouter().initialize();
+
+			// set the product feedback model
+			this.setModel(models.createCommentsModel(), "productFeedback");
 		},
 
 		/**
