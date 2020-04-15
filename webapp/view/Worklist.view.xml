@@ -14,6 +14,40 @@
 		</semantic:titleHeading>
 
 		<semantic:content>
+			<IconTabBar
+				id="iconTabBar"
+				select=".onQuickFilter"
+				expandable="false"
+				headerBackgroundDesign="Transparent">
+				<items>
+					<IconTabFilter
+						key="all"
+						showAll="true"
+						count="{worklistView>/countAll}"
+						text="{i18n>WorklistFilterProductsAll}"/>
+					<IconTabSeparator/>
+					<IconTabFilter
+						key="inStock"
+						icon="sap-icon://message-success"
+						iconColor="Positive"
+						count="{worklistView>/inStock}"
+						text="{i18n>WorklistFilterInStock}"/>
+					<IconTabFilter
+						key="shortage"
+						icon="sap-icon://message-warning"
+						iconColor="Critical"
+						count="{worklistView>/shortage}"
+						text="{i18n>WorklistFilterShortage}"/>
+					<IconTabFilter
+						key="outOfStock"
+						icon="sap-icon://message-error"
+						iconColor="Negative"
+						count="{worklistView>/outOfStock}"
+						text="{i18n>WorklistFilterOutOfStock}"/>
+				</items>
+				<content>
+
+
 			<Table
 				id="table"
 				width="auto"
@@ -107,6 +141,8 @@
 					</ColumnListItem>
 				</items>
 			</Table>
+			</content>
+			</IconTabBar>
 		</semantic:content>
 
 		<semantic:sendEmailAction>
